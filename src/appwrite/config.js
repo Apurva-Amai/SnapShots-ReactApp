@@ -101,7 +101,7 @@ class Service {
 
     async uploadFile(fileData) {
         try {
-            const file = await this.databases.createFile(
+            const file = await this.storage.createFile(
                 conf.appwriteBucketID,
                 ID.unique(),
                 fileData

@@ -10,7 +10,7 @@ function PostForm({post}) {
   const { register, handleSubmit, watch, setValue, control, getValues} = useForm({
     defaultValues: {
       title: post?.title || '',
-      // articleID: post?.$id || articleID,
+      articleID: post?.$id || articleID,
       description: post?.description || '',
       status: post?.status || 'Active',
     }
