@@ -3,12 +3,30 @@ import { useSelector } from 'react-redux'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Container, Logo, LogoutBtn } from '../index'
 import logo2 from "../../logo2.jpg"
+import { useEffect, useState } from 'react'
+import authService from '../../appwrite/auth'
 
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.userStatus)   // get the auth status from the store
   // const navigate = useNavigate()
   
+  const [username, setUsername] = useState('')
+
+  useEffect(() => {
+  const fetchUserData = async () => {
+    try {
+      const data = await authService.getCurrentUser()
+      setUsername(data.name)
+    } catch (error) {
+      console.error("Error fetching user data:", error)
+    }
+  }
+  if(authStatus) {
+    fetchUserData()
+  }
+  }, [authStatus])
+
 
   const navItems = [
     {
@@ -39,13 +57,14 @@ function Header() {
   ]
 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-3 shadow bg-gray-500 '>
       <Container>
         <nav className='flex'>
-          <div>
+          <div className='flex'>
             <Link to='/'>
             <Logo width='40px'/>
             </Link>
+            <div className='text-xl content-center capitalize ml-4'>{username}</div>
           </div>
           <ul className='flex ml-auto'>
             {navItems.map((item) => item.active ? (
