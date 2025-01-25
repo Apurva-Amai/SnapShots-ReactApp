@@ -74,7 +74,7 @@ function Login() {
             <div className="relative">
               <Input
                 label="Password :"
-                placeholder="Enter your password"
+                placeholder="Enter your Password"
                 type={showPassword ? "text" : "password"}
                 {...register("password", {
                   required: true,

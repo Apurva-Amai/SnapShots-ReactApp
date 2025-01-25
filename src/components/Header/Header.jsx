@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Container, Logo, LogoutBtn } from '../index'
-import logo2 from "../../logo2.jpg"
 import { useEffect, useState } from 'react'
 import authService from '../../appwrite/auth'
 

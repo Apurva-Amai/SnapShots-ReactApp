@@ -2,10 +2,10 @@ import React from 'react'
 import service from '../appwrite/config'
 import { Link } from 'react-router-dom'
 
-function PostCard({post}) {
+function PostCard({post}) {                   //  $id or articleID
   return (
     <div>
-        <Link to={`/post/${post.$id}`}>            //  $id or articleID
+        <Link to={`/post/${post.$id}`}>            
             <div className='w-full bg-gray-100 rounded-xl p-4'>
                 <div className='w-full justify-center mb-4'>
                     <img src={service.getFilePreview(post.imageID)} alt={post.title}  className='rounded-xl'/>

@@ -33,6 +33,8 @@ function Signup() {
     }
   };
 
+  
+
   return (
     <div className="my-10 flex items-center justify-center">
       <div
@@ -82,7 +84,7 @@ function Signup() {
             <div className="relative">
               <Input
                 label="Password :"
-                placeholder="Enter your password"
+                placeholder="Enter your Password"
                 type={showPassword ? "text" : "password"}
                 {...register("password", {
                   required: true,
