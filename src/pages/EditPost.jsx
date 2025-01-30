@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import service from '../appwrite/config'
-import { Container, PostForm } from '../components'
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import service from "../appwrite/config";
+import { Container, PostForm } from "../components";
 
 function EditPost() {
-  const [post, setPost] = useState(null)
-  const {articleID} = useParams()
-  const navigate  = useNavigate()
+  const [post, setPost] = useState(null);
+  const { articleID } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if(articleID) {
+    if (articleID) {
       service.getPost(articleID).then((post) => {
-        if(post) {
-          setPost(post)
+        if (post) {
+          setPost(post);
         }
-      })
+      });
     } else {
-      navigate('/')
+      navigate("/");
     }
-  }, [articleID, navigate])
+  }, [articleID, navigate]);
 
   return post ? (
-    <div className='py-8'>
+    <div className="py-8">
       <Container>
-        <PostForm post={post} articleID={articleID}/>
+        <PostForm post={post} articleID={articleID} />
       </Container>
     </div>
-  ) : null
+  ) : null;
 }
 
-export default EditPost
+export default EditPost;

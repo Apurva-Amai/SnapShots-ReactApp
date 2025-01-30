@@ -1,69 +1,138 @@
-import React, { useEffect, useState } from 'react'
-import service from '../appwrite/config'
-import { Container, PostCard } from '../components'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import service from "../appwrite/config";
+import { Container, PostCard } from "../components";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Home() {
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const authStatus = useSelector((state) => state.auth.userStatus);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true)
+      setLoading(true);
 
       try {
-        const posts = await service.getPosts()
-        if(posts) {
-          setPosts(posts.documents)
+        const posts = await service.getPosts();
+        if (posts) {
+          setPosts(posts.documents);
         }
       } catch (error) {
-        console.log("Error Fetching Posts: ", error)
+        console.log("Error Fetching Posts: ", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
     fetchPosts();
-  }, [])
+  }, []);
+
+  // if (posts.length === 0) {
+  if(!authStatus) {
+    return (
+      <div className="w-full py-8 mt-4 text-center">
+        <Container>
+          <div className="flex flex-wrap">
+            <div className="p-2 w-full mb-8">
+              <h1 className="text-4xl font-bold mb-4">
+                Welcome to the SnapShots
+              </h1>
+              <h1 className="text-3xl font-bold">Login to Read Posts</h1>
+            </div>
+            <div className="p-2 w-full grid grid-cols-3 gap-8">
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/1602726/pexels-photo-1602726.jpeg"
+                />
+              </div>
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/548084/pexels-photo-548084.jpeg"
+                />
+              </div>
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/459451/pexels-photo-459451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                />
+              </div>
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                />
+              </div>
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/6796883/pexels-photo-6796883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                />
+              </div>
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                />
+              </div>
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                />
+              </div>
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                />
+              </div>
+              <div>
+                <img
+                  className="rounded-xl shadow-xl"
+                  src="https://images.pexels.com/photos/29984285/pexels-photo-29984285/free-photo-of-monochrome-portrait-of-a-barnacle-goose-by-water.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+    );
+  }
+
+  if(loading) {
+    return (
+      // <div className="text-5xl text-center font-serif py-10 my-28">
+      //   Loading....
+      // </div>
+      <div className="flex items-center justify-center h-screen">
+        <svg viewBox="25 25 50 50" className=''>
+          <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+      </div>
+    )
+  }
 
   if(posts.length === 0) {
     return (
-      <div className='w-full py-8 mt-4 text-center'>
-            <Container>
-                <div className='flex flex-wrap'>
-                    <div className='p-2 w-full mb-8'>                            
-                        <h1 className='text-4xl font-bold mb-4'>Welcome to the SnapShots</h1>
-                        <h1 className='text-3xl font-bold'>Login to Read Posts</h1>
-                    </div>    
-                    <div className='p-2 w-full grid grid-cols-3 gap-8'>
-                      <div><img className='rounded-xl shadow-xl' src="https://images.pexels.com/photos/1602726/pexels-photo-1602726.jpeg"/></div>
-                      <div><img className='rounded-xl shadow-xl' src="https://images.pexels.com/photos/548084/pexels-photo-548084.jpeg"/></div>
-                      <div><img className='rounded-xl shadow-xl' src="https://images.pexels.com/photos/459451/pexels-photo-459451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></div>
-                      <div><img className='rounded-xl shadow-xl' src='https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/></div>
-                      <div><img className='rounded-xl shadow-xl' src="https://images.pexels.com/photos/6796883/pexels-photo-6796883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></div>
-                      <div><img className='rounded-xl shadow-xl' src="https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></div>
-                      <div><img className='rounded-xl shadow-xl' src="https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></div>
-                      <div><img className='rounded-xl shadow-xl' src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></div>
-                      <div><img className='rounded-xl shadow-xl' src="https://images.pexels.com/photos/29984285/pexels-photo-29984285/free-photo-of-monochrome-portrait-of-a-barnacle-goose-by-water.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" /></div>
-                    </div>
-                </div>
-            </Container>
-        </div>
+      <div className="text-5xl text-center font-serif py-10 my-28">
+        Nothing to see here… yet! Care to change that?
+      </div>
     )
   }
 
   return (
-    <div className='w-full py-8'>
+    <div className="w-full py-8">
       <Container>
-        <div className='flex flex-wrap'>
-          {
-            posts.map((post) => (
-              <div key={post.$id} className='p-2 w-1/4'>
-                <PostCard post={post}/>
-              </div>
-            ))
-          }
+        <div className="flex flex-wrap">
+          {posts.map((post) => (
+            <div key={post.$id} className="p-2 w-1/4">
+              <PostCard post={post} />
+            </div>
+          ))}
         </div>
       </Container>
     </div>
-  )
+  );
 }

@@ -11,5 +11,17 @@ import RTE from "./RTE";
 import Select from "./Select";
 import AuthLayout from "./AuthLayout";
 
-
-export {Header, Footer, Logo, Container, LogoutBtn, Button, Input, PostCard, PostForm, RTE, Select, AuthLayout};
+export {
+  Header,
+  Footer,
+  Logo,
+  Container,
+  LogoutBtn,
+  Button,
+  Input,
+  PostCard,
+  PostForm,
+  RTE,
+  Select,
+  AuthLayout,
+};

@@ -19,13 +19,19 @@ export default function Footer() {
             <h3 className="text-center my-8 text-sm text-zinc-900">SUPPORT</h3>
             <ul className=" justify-items-center space-y-3 font-medium ">
               <li>
-                <Link to="/" className="hover:text-gray-700">Account</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Account
+                </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-700">Help Center</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Help Center
+                </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-700">Contact Us</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
@@ -33,16 +39,24 @@ export default function Footer() {
             <h3 className="text-center my-8 text-sm text-zinc-900">COMPANY</h3>
             <ul className="justify-items-center space-y-3 font-medium">
               <li>
-                <Link to="/" className="hover:text-gray-700">About Us</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-700">Pricing</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Pricing
+                </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-700">Press Kit</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Press Kit
+                </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-700">Affiliate Programs</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Affiliate Programs
+                </Link>
               </li>
             </ul>
           </div>
@@ -50,13 +64,19 @@ export default function Footer() {
             <h3 className="text-center my-8 text-sm text-zinc-900">LEGALS</h3>
             <ul className="justify-items-center space-y-3 font-medium">
               <li>
-                <Link to="/" className="hover:text-gray-700">Terms & Conditions</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Terms & Conditions
+                </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-700">Privacy Policy</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-700">Licensing</Link>
+                <Link to="/" className="hover:text-gray-700">
+                  Licensing
+                </Link>
               </li>
             </ul>
           </div>

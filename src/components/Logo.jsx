@@ -1,12 +1,12 @@
-import React from 'react'
-import logo from '../logo.webp'
+import React from "react";
+import logo from "../logo.webp";
 
-function Logo({height, width}) {
+function Logo({ height, width }) {
   return (
     <div>
-      <img src={logo} alt="Logo" style={{height: height, width: width}} />
+      <img src={logo} alt="Logo" style={{ height: height, width: width }} />
     </div>
-  )
+  );
 }
 
-export default Logo
+export default Logo;
