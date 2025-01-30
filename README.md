@@ -1,12 +1,12 @@
 # SnapShots
 
 ## Description
-SnapShots is a dynamic React application designed for users to create, manage, and share snapshots effortlessly. Utilizing modern web technologies such as React, Redux, React Router, TinyMCE, Tailwind CSS, and Appwrite, it offers a user-friendly interface and seamless interactions, making it ideal for both personal and collaborative use.
+SnapShots is a dynamic React application designed for users to create and manage, snapshots effortlessly. Utilizing modern web technologies such as React, Redux, React Router, TinyMCE, Tailwind CSS, and Appwrite, it offers a user-friendly interface and seamless interactions, making it ideal for both personal and collaborative use.
 
 ## Features
 - Built with React and Redux for efficient state management.
 - Rich text editing capabilities using TinyMCE for enhanced content creation.
-- Responsive design powered by Tailwind CSS, ensuring a great user experience on all devices.
+- Responsive design powered by Tailwind CSS, ensuring a great user experience.
 - Integration with Appwrite for backend services, enabling user authentication and data management.
 - Dynamic routing with React Router for seamless navigation between different pages of the application.
 
