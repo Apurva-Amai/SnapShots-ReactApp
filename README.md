@@ -13,7 +13,7 @@ SnapShots is a dynamic React application designed for users to create, manage, a
 ## Installation Instructions
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Apurva-Amai/SnapShots-ReactApp.git
    ```
 2. Navigate to the project directory:
    ```bash
